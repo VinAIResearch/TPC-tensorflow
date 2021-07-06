@@ -1,0 +1,12 @@
+__pycache__/
+*.py[cod]
+*.egg-info
+./dist
+./logdir
+MUJOCO_LOG.TXT
+logdir/
+.vscode/
+.ipynb_checkpoints/
+videos/
+plots*/
+natural_bg.jpg
