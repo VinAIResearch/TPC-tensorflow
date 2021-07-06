@@ -57,3 +57,7 @@ Generate plots:
 ```
 python plotting.py --indir ./logdir/standard --outdir ./plots/standard --xaxis step --yaxis test/return --bins 3e4 --cols 3
 ```
+
+## Acknowledgement
+
+This code base is largely based on the tensorflow 2 implementation of [Dreamer](https://github.com/danijar/dreamer). In addition, many thanks to Amy Zhang for helping with the implementation for the natural background setting.
