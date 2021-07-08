@@ -17,7 +17,7 @@ import natural_imgsource
 
 class DeepMindControl:
 
-  def __init__(self, name, size=(64, 64), camera=None, resource_files=[], img_source='video', random_bg=False, max_videos=100):
+  def __init__(self, name, size=(64, 64), camera=None, bg_path='./videos/train', img_source='video', random_bg=False, max_videos=100):
     domain, task = name.split('_', 1)
     if domain == 'cup':  # Only domain with multiple words.
       domain = 'ball_in_cup'
@@ -36,21 +36,14 @@ class DeepMindControl:
     if img_source == 'none':
       self._bg_source = None
     else:
-      if img_source == "color":
-        self._bg_source = natural_imgsource.RandomColorSource(size)
-      elif img_source == "noise":
-        self._bg_source = natural_imgsource.NoiseSource(size)
+      files = [
+        os.path.join(bg_path, f) for f in os.listdir(bg_path)
+        if os.path.isfile(os.path.join(bg_path, f))
+      ]
+      if img_source == "video":
+        self._bg_source = natural_imgsource.RandomVideoSource(size, files, random_bg, max_videos, grayscale=False)
       else:
-        files = resource_files
-        assert len(files), "Pattern {} does not match any files".format(
-          resource_files
-        )
-        if img_source == "images":
-          self._bg_source = natural_imgsource.RandomImageSource(size, files, random_bg, grayscale=False)
-        elif img_source == "video":
-          self._bg_source = natural_imgsource.RandomVideoSource(size, files, random_bg, max_videos, grayscale=False)
-        else:
-          raise Exception("img_source %s not defined." % img_source)
+        raise Exception("img_source %s not defined." % img_source)
 
   @property
   def observation_space(self):

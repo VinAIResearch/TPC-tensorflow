@@ -370,11 +370,7 @@ def summarize_episode(episode, config, datadir, writer, prefix):
 def make_env(config, bg_path, writer, prefix, datadir, store):
   suite, task = config.task.split('_', 1)
   if suite == 'dmc':
-    resource_files = [
-      os.path.join(bg_path, f) for f in os.listdir(bg_path)
-      if os.path.isfile(os.path.join(bg_path, f))
-    ]
-    env = wrappers.DeepMindControl(task, resource_files=resource_files, img_source=config.img_source_type,
+    env = wrappers.DeepMindControl(task, bg_path=bg_path, img_source=config.img_source_type,
                                   random_bg=config.random_bg, max_videos=config.max_videos)
     env = wrappers.ActionRepeat(env, config.action_repeat)
     env = wrappers.NormalizeActions(env)
