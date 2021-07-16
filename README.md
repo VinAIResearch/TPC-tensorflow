@@ -1,6 +1,6 @@
 # Temporal Predictive Coding For Model-Based Planning In Latent Space
 
-This is an implementation of the paper [Temporal Predictive Coding For Model-Based Planning In Latent Space](https://arxiv.org/abs/2106.07156) in Tensorflow 2 . We propose TPC - an information-theoretic representation learning framework for reinforcement learning from high-dimensional observations. TPC employs temporal predictive coding to encode elements in the environment that can be predicted across time, and learns this representation in conjunction with a recurrent state space model that allows for direct planning in latent space. Experiments show that our model is superior to existing methods in several DMControl tasks.
+This is an implementation of the paper [Temporal Predictive Coding For Model-Based Planning In Latent Space](https://arxiv.org/abs/2106.07156) in Tensorflow 2 . We propose TPC - an information-theoretic representation learning framework for reinforcement learning from high-dimensional observations. TPC employs temporal predictive coding to encode elements that can be predicted across time in the environment. In addition, it learns the representations of these elements in conjunction with a recurrent state space model that allows for direct planning in latent space. Experiments show that our model is superior to existing methods in several DMControl tasks.
 
 <img width="100%" src="./tpc.png">
 
