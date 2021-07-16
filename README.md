@@ -7,11 +7,14 @@ This is an implementation of the paper [Temporal Predictive Coding For Model-Bas
 Details of the model architecture and experimental results can be found in our [following paper](https://arxiv.org/abs/2106.07156):
 
 ```
-@article{nguyen2021temporal,
-  title={Temporal Predictive Coding For Model-Based Planning In Latent Space},
-  author={Nguyen, Tung and Shu, Rui and Pham, Tuan and Bui, Hung and Ermon, Stefano},
-  journal={arXiv preprint arXiv:2106.07156},
-  year={2021}
+@InProceedings{pmlr-139-nguyen21a,
+  title = 	 {Temporal Predictive Coding For Model-Based Planning In Latent Space},
+  author =       {Nguyen, Tung and Shu, Rui and Pham, Tuan and Bui, Hung and Ermon, Stefano},
+  booktitle = 	 {Proceedings of the 38th International Conference on Machine Learning},
+  year = 	 {2021},
+  volume = 	 {139},
+  series = 	 {Proceedings of Machine Learning Research},
+  publisher =    {PMLR},
 }
 ```
 
