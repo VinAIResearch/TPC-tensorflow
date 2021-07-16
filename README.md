@@ -1,6 +1,6 @@
 # Temporal Predictive Coding For Model-Based Planning In Latent Space
 
-This is an implementation of the paper [Temporal Predictive Coding For Model-Based Planning In Latent Space](https://arxiv.org/abs/2106.07156) in Tensorflow 2 . We propose TPC - an information-theoretic representation learning framework for reinforcement learning from high-dimensional observations. TPC employs temporal predictive coding to encode elements in the environment that can be predicted across time, and learns this representation in conjunction with a recurrent state space model that allows planning in latent space. Experiments show that our model is superior to existing methods in several DMControl tasks.
+This is an implementation of the paper [Temporal Predictive Coding For Model-Based Planning In Latent Space](https://arxiv.org/abs/2106.07156) in Tensorflow 2 . We propose TPC - an information-theoretic representation learning framework for reinforcement learning from high-dimensional observations. TPC employs temporal predictive coding to encode elements in the environment that can be predicted across time, and learns this representation in conjunction with a recurrent state space model that allows for direct planning in latent space. Experiments show that our model is superior to existing methods in several DMControl tasks.
 
 <img width="100%" src="./tpc.png">
 
@@ -38,7 +38,7 @@ conda activate tpc
 python tpc.py --task dmc_cartpole_swingup --logdir ./logdir/standard/cartpole_swingup/TPC/1 --img_source_type none --seed 1
 ```
 
-The above command will train the TPC agent on cartpole swingup task in the standard setting (i.e., no backgrounds), and the results will be saved in `./logdir/standard/cartpole_swingup/TPC/1`. To run the agent in the natural background setting, first download the source videos, then run by setting `--img_source_type video`. If `--random_bg` is also set to `True`, the background will be randomized for each time step.
+The above command will train the TPC agent on cartpole swingup task in the standard setting (i.e., no backgrounds), and the results will be saved in `./logdir/standard/cartpole_swingup/TPC/1`. To run the agent in the natural background setting, first, download the source videos, then run by setting `--img_source_type video`. If `--random_bg` is also set to `True`, the background will be randomized for each time step.
 
 ### Download background videos
 
@@ -60,4 +60,4 @@ python plotting.py --indir ./logdir/standard --outdir ./plots/standard --xaxis s
 
 ## Acknowledgement
 
-This code base is largely based on the tensorflow 2 implementation of [Dreamer](https://github.com/danijar/dreamer). In addition, many thanks to Amy Zhang for helping with the implementation for the natural background setting.
+This codebase is largely based on the Tensorflow 2 implementation of [Dreamer](https://github.com/danijar/dreamer). In addition, many thanks to Amy Zhang for helping with the implementation of the natural background setting.
